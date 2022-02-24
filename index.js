@@ -32,7 +32,7 @@ async function display(){
 
     // q = Popular Videos --> Popular%20Videos (%20 -> Space)
 
-    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=newtonschool%20video&key=AIzaSyAxG--_HGPJlv0O3gNPXjywxf7fxCcsLPg&maxResults=15`);
+    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=newtonschool%20video&key=AIzaSyAxG--_HGPJlv0O3gNPXjywxf7fxCcsLPg&maxResults=20`);
 
     let data = await res.json();
     
@@ -60,7 +60,7 @@ async function searchVideos(){
     let query = document.getElementById("video").value; // Search String/ Query String
 
 //search for videos
-let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyAxG--_HGPJlv0O3gNPXjywxf7fxCcsLPg&maxResults=5`);
+let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyAxG--_HGPJlv0O3gNPXjywxf7fxCcsLPg&maxResults=20`);
 let data = await res.json();
 
 for({id:{videoId}}of data.items)
@@ -71,4 +71,8 @@ videodiv.src = `https://www.youtube.com/embed/${videoId}`;
 videodiv.allow = 'fullscreen'
 div.append(videodiv)
 }
+}
+
+function home(){
+    document.getElementById("video").textContent = "";
 }

@@ -1,7 +1,12 @@
 body{
     margin: 0;
+    background-color: #eeeeee;
 }
 #navbar{
+    background-color: #fff;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,13 +61,35 @@ body{
     cursor: pointer;
 }
 
+#mic{
+    padding: 10px 13px;
+    border-radius: 100px;
+    background-color: rgba(0,0,0,0.05);
+    margin-right: 30px;
+}
+
+#other{
+    padding: 10px 13px;
+}
+
+#other:hover{
+    padding: 10px 13px;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.1);
+}
+
 #videodiv{
-    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .mons{
-    width: 450px;
-    height:  300px;
-    margin: 20px;
+    width: 300px;
+    height:  180px;
+    margin: 15px;
+    border: 1px Solid rgba(0,0,0,0.3);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
 }
 @media screen and (max-width: 620px) {
    #end i,#logo i{
