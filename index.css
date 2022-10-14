@@ -57,10 +57,18 @@ body {
     font-size: 1.5vw;
 }
 
+#search input:hover {
+    background-color: #f7f7f7;
+}
+
 #search span {
     font-size: 1.5vw;
     padding-left: 1.3vw;
     cursor: pointer;
+}
+
+#search:hover {
+    background-color: #e9e8e8;
 }
 
 #end {
@@ -78,6 +86,10 @@ body {
     border-radius: 100px;
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.05);
+}
+
+#mic:hover {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 #other {

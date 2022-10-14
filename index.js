@@ -3,7 +3,7 @@ let div = document.getElementById("videodiv");
 
 //! Show/Display Videos on Homepage
 async function display(){
-    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=youtuber%20video&key=AIzaSyAxG--_HGPJlv0O3gNPXjywxf7fxCcsLPg&maxResults=20`);
+    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=webdevelopment%20video&key=AIzaSyBsc16hVF__FKR0CrAC_uogrowrV37p_n8&maxResults=20`);
     let data = await res.json();
     
     console.log(data);
@@ -25,7 +25,7 @@ async function searchVideos(){
     document.getElementById("videodiv").innerHTML="";
     let query = document.getElementById("video").value;
 
-    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyAxG--_HGPJlv0O3gNPXjywxf7fxCcsLPg&maxResults=20`);
+    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyBsc16hVF__FKR0CrAC_uogrowrV37p_n8&maxResults=20`);
     let data = await res.json();
 
     for({id:{videoId}}of data.items){
@@ -37,6 +37,9 @@ async function searchVideos(){
     }
 }
 
-// function Home(){
-//     document.getElementById("video").textContent = "";
-// }
+function Home(){
+    document.getElementById("video").textContent = "";
+}
+
+// Devang Key = AIzaSyAxG--_HGPJlv0O3gNPXjywxf7fxCcsLPg
+// Divyash Key = AIzaSyBsc16hVF__FKR0CrAC_uogrowrV37p_n8
