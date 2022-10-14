@@ -1,8 +1,9 @@
-body{
+body {
     margin: 0;
-    background-color: #eeeeee;
+    background-color: #fff;
 }
-#navbar{
+
+#navbar {
     background-color: #fff;
     position: -webkit-sticky;
     position: sticky;
@@ -11,10 +12,16 @@ body{
     justify-content: center;
     align-items: center;
     border: 1px solid #c6c6c6;
-    height: 60px;
+    height: 6vw;
     font-size: 18px;
 }
-#logo{
+
+#bars{
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+#logo {
     display: flex;
     align-items: center;
     width: 20%;
@@ -22,92 +29,100 @@ body{
     margin-left: 20px;
 }
 
-#logo img{
-    width: 100px;
-    margin-left: 30px;
+#logo img {
+    width: 7.3vw;
+    margin-left: 2vw;
 }
-#center{
-    width: 60%;
+
+#center {
+    width: 55vw;
     border: 1px solid #c6c6c6;
     margin: 0 10px;
 }
 
-#search{
-    width: 100%;
+#search {
+    display: flex;
+    align-items: center;
+    width: 55vw;
     height: 60%;
     background-color: #f1f1f1;
 }
 
-#search input{
-    width:92%;
-    height:30px;
-    border:none;
+#search input {
+    width: 90%;
+    height: 2.5vw;
+    border: none;
     border-right: 1px solid #c6c6c6;
-    padding-left:10px;
-    font-size: 20px;
+    padding-left: 10px;
+    font-size: 1.5vw;
 }
 
-#search span{
-    width: 10%;
-    padding-left: 10px;
+#search span {
+    font-size: 1.5vw;
+    padding-left: 1.3vw;
     cursor: pointer;
 }
 
-#end{
-    width: 20%;
+#end {
+    margin-left: 7vw;
+    margin-right: 2vw;
+    width: 10%;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
     cursor: pointer;
 }
 
-#mic{
-    padding: 10px 13px;
+#mic {
+    font-size: 1.5vw;
+    padding: 1vw 1.2vw;
     border-radius: 100px;
-    background-color: rgba(0,0,0,0.05);
-    margin-right: 30px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
-#other{
-    padding: 10px 13px;
+#other {
+    font-size: 1.5vw;
+    padding: 0 1vw;
+    margin: 0.2vw;
+    cursor: pointer;
 }
 
-#other:hover{
-    padding: 10px 13px;
-    border-radius: 5px;
-    background-color: rgba(0,0,0,0.1);
+#other:hover {
+    padding: 1.1vw 1vw;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
-#videodiv{
+#videodiv {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
 }
-.mons{
-    width: 300px;
-    height:  180px;
-    margin: 15px;
-    border: 1px Solid rgba(0,0,0,0.3);
-    border-radius: 10px;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+
+.mons {
+    border: none;
+    width: 23vw;
+    height: 13vw;
+    margin: 25px 10px;
 }
-@media screen and (max-width: 620px) {
-   #end i,#logo i{
-       display: none;
-   }#end i:nth-child(5){
-       display: block;
-   }
-   #logo img{
-        width: 100%;
-        margin: 0;
-   }#center{
-       margin-left: 30px;
-   }#search input{
-       width: 70%;
-   }#navbar{
-       border-right: none;
-   }.mons{
-       width: 310px;
-       height: 200px;
-   }
-  }
+
+@media screen and (max-width: 1024px) {
+    .mons {
+        width: 30vw;
+        height: 17vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mons {
+        width: 47vw;
+        height: 26vw;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .mons {
+        width: 96vw;
+        height: 53vw;
+    }
+}

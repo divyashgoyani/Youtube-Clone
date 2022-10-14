@@ -1,78 +1,42 @@
-/*
-
-Need 2 Things:
-(1) Show/Display Videos on Homepage
-(2) Search When Something is typed in the search-box
-
-
-display()
-- Show/Display Videos on Homepage
-- Based Upon Most Popular Videos
-- Should be Called Directly WITHOUT Any Event 
-(No Hover, No Click , No On Click)
-- On Page Load
-
-
-
-searchVideo()
-- Search When Something is typed in the search-box
-- Take the "String" typed in search-box and search on that string 
-
-
-*/
-
 let div = document.getElementById("videodiv");
 
 
-// // (1) Show/Display Videos on Homepage
-
-
-
+//! Show/Display Videos on Homepage
 async function display(){
-
-    // q = Popular Videos --> Popular%20Videos (%20 -> Space)
-
-    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=newtonschool%20video&key=AIzaSyAxG--_HGPJlv0O3gNPXjywxf7fxCcsLPg&maxResults=20`);
-
+    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=youtuber%20video&key=AIzaSyAxG--_HGPJlv0O3gNPXjywxf7fxCcsLPg&maxResults=20`);
     let data = await res.json();
     
-    for({id:{videoId}}of data.items)
-    {
-    let videodiv= document.createElement("iframe")
-    videodiv.setAttribute("class","mons")
-    videodiv.src = `https://www.youtube.com/embed/${videoId}`;
-    videodiv.allow = 'fullscreen'
-    div.append(videodiv)
+    console.log(data);
+    for({id:{videoId}}of data.items){
+        let videodiv= document.createElement("iframe")
+        videodiv.setAttribute("class","mons")
+        videodiv.src = `https://www.youtube.com/embed/${videoId}`;
+        videodiv.allow = 'fullscreen'
+        div.append(videodiv)
     }
-
 }
-
 display();
 
 
 
-
-// (2) Search When Something is typed in the search-box
+//! Search When Something is typed in the search-box
 
 async function searchVideos(){
-    document.getElementById("videodiv").innerHTML=""; // Empty 
+    document.getElementById("videodiv").innerHTML="";
+    let query = document.getElementById("video").value;
 
-    let query = document.getElementById("video").value; // Search String/ Query String
+    let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyAxG--_HGPJlv0O3gNPXjywxf7fxCcsLPg&maxResults=20`);
+    let data = await res.json();
 
-//search for videos
-let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyAxG--_HGPJlv0O3gNPXjywxf7fxCcsLPg&maxResults=20`);
-let data = await res.json();
-
-for({id:{videoId}}of data.items)
-{
-let videodiv= document.createElement("iframe")
-videodiv.setAttribute("class","mons")
-videodiv.src = `https://www.youtube.com/embed/${videoId}`;
-videodiv.allow = 'fullscreen'
-div.append(videodiv)
-}
+    for({id:{videoId}}of data.items){
+        let videodiv= document.createElement("iframe")
+        videodiv.setAttribute("class","mons")
+        videodiv.src = `https://www.youtube.com/embed/${videoId}`;
+        videodiv.allow = 'fullscreen'
+        div.append(videodiv)
+    }
 }
 
-function home(){
-    document.getElementById("video").textContent = "";
-}
+// function Home(){
+//     document.getElementById("video").textContent = "";
+// }
