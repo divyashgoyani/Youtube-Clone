@@ -13,27 +13,40 @@
 </head>
 
 <body>
+
+    <!-- Header Section -->
     <div id="navbar">
-        <div id="logo">
-            <i id="bars" class="fas fa-bars"></i>
-            <a href="https://youtubeclone-divyash.netlify.app"><img src="Youtube Logo.png" onclick="home()" alt="Youtube logo"></a>
+        <div class="leftSection">
+            <i class="fas fa-bars"></i>
+            <img src="Youtube Logo.png" onclick="home()" alt="Youtube logo">
         </div>
-        <div id="center">
+        <div class="centerSection">
             <div id="search">
-                <input type="text" id="video" placeholder="Search">
-                <span onclick="searchVideos()">
+                <input type="text" id="video"  style="height: 100%;width: 100%;" placeholder="Search">
+                <div class="searchbtn" onclick="searchVideos()">
                     <i class="fas fa-search"></i>
-                </span>
+                </div>
+            </div>
+            <div class="mic">
+                <i class="fas fa-microphone"></i>
             </div>
         </div>
-        <i id="mic" class="fas fa-microphone"></i>
-        <div id="end">
-            <i id="other" class="fas fa-video"></i>
-            <i id="other" class="fas fa-bell"></i>
-            <i id="other" class="fas fa-user"></i>
+        <div class="rightSection">
+            <div class="video">
+                <i class="fas fa-video"></i>
+            </div>
+            <div class="notification" style="margin: 0 20px;">
+                <i class="fas fa-bell"></i>
+            </div>
+            <div class="profile">
+                <i class="fas fa-user"></i>
+            </div>
         </div>
     </div>
+
+    <!-- Main Section -->
     <div id="videodiv"></div>
+
+    <script src="./index.js"></script>
 </body>
 </html>
-<script src="./index.js"></script>

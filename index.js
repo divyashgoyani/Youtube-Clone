@@ -5,8 +5,8 @@ let div = document.getElementById("videodiv");
 async function display(){
     let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=webdevelopment%20video&key=AIzaSyBsc16hVF__FKR0CrAC_uogrowrV37p_n8&maxResults=20`);
     let data = await res.json();
+    console.log('>>>', data);
     
-    console.log(data);
     for({id:{videoId}}of data.items){
         let videodiv= document.createElement("iframe")
         videodiv.setAttribute("class","mons")
@@ -16,7 +16,6 @@ async function display(){
     }
 }
 display();
-// lllllllll
 
 
 //! Search When Something is typed in the search-box
