@@ -7,12 +7,12 @@ async function display(){
     let data = await res.json();
     console.log('>>>', data);
     
-    for({id:{videoId}}of data.items){
-        let videodiv= document.createElement("iframe")
-        videodiv.setAttribute("class","mons")
+    for({id:{videoId}}of data.items) {
+        let videodiv= document.createElement("iframe");
+        videodiv.setAttribute("class","mons");
         videodiv.src = `https://www.youtube.com/embed/${videoId}`;
-        videodiv.allow = 'fullscreen'
-        div.append(videodiv)
+        videodiv.allow = 'fullscreen';
+        div.append(videodiv);
     }
 }
 display();
@@ -26,13 +26,14 @@ async function searchVideos(){
 
     let res = await fetch(`https://youtube.googleapis.com/youtube/v3/search?q=${query}&type=video&key=AIzaSyBsc16hVF__FKR0CrAC_uogrowrV37p_n8&maxResults=20`);
     let data = await res.json();
+    console.log('>>>>>', data);
 
-    for({id:{videoId}}of data.items){
-        let videodiv= document.createElement("iframe")
-        videodiv.setAttribute("class","mons")
+    for({id:{videoId}}of data.items) {
+        let videodiv= document.createElement("iframe");
+        videodiv.setAttribute("class","mons");
         videodiv.src = `https://www.youtube.com/embed/${videoId}`;
-        videodiv.allow = 'fullscreen'
-        div.append(videodiv)
+        videodiv.allow = 'fullscreen';
+        div.append(videodiv);
     }
 }
 
