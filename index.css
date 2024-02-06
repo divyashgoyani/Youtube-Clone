@@ -135,12 +135,24 @@ html, body {
 
 
 @media screen and (min-width: 320px) {
+    #navbar {
+        padding: 10px;
+    }
+
+    .leftSection i, .mic{
+        display: none;
+    }
+
+    .leftSection img {
+        height: 70%;
+    }
+
     .rightSection {
         display: none;
     }
 
     #search {
-        width: 300px;
+        width: 200px;
     }
 
     #videodiv {
@@ -148,15 +160,33 @@ html, body {
     }
 }
 
+
 @media screen and (min-width: 768px) {
+    #navbar {
+        padding: 10px 20px;
+    }
+
+    .leftSection i, .mic{
+        display: flex;
+    }
+
+    .leftSection img {
+        height: 100%;
+    }
+
     .rightSection {
         display: flex;
+    }
+
+    #search {
+        width: 300px;
     }
 
     #videodiv {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 
 @media screen and (min-width: 1024px) {
     #search {
